@@ -1,0 +1,12 @@
+{% comment %}
+  Obfuscated support-email link. The address never appears in the HTML
+  source (no "mailto:" href, no "@"): user and domain are stored reversed
+  in data attributes and un-reversed by the script in default.html, which
+  also sets the visible text. Naive address-harvesting crawlers see
+  nothing to match; humans (and NoScript users, via the fallback) do.
+  Usage: {% include email.html subject="NFS Files support" %}
+{% endcomment %}
+{% assign _parts = site.support_email | split: '@' %}
+{% assign _u = _parts[0] | split: '' | reverse | join: '' %}
+{% assign _d = _parts[1] | split: '' | reverse | join: '' %}
+<a href="#contact" class="email-link" data-u="{{ _u }}" data-d="{{ _d }}" data-s="{{ include.subject | default: 'NFS Files support' | uri_escape }}">{{ include.text | default: 'Email support' }}</a><noscript><span>jbaker00+nfsfiles at gmail dot com</span></noscript>

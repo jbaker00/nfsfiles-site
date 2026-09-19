@@ -38,4 +38,4 @@ If this policy changes, the updated version will be posted here with a new date.
 
 ## Contact
 
-Questions about this policy? Email [jbaker00@mail.com](mailto:jbaker00@mail.com?subject=NFS%20Files%20privacy).
+Questions about this policy? {% include email.html subject="NFS Files privacy" %}.

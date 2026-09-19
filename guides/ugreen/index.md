@@ -28,4 +28,4 @@ Control Panel → Shared Folder → select the folder → **NFS** (or Edit → N
 
 **Inspect Server** on the server card: green Read/Write badges mean done.
 
-*I don't own a UGREEN — these steps are from UGOS documentation and the app's own test notes. If a screen has moved, email a screenshot to [jbaker00@mail.com](mailto:jbaker00@mail.com?subject=UGREEN%20guide%20correction) and I'll fix this page the same day.*
+*I don't own a UGREEN — these steps are from UGOS documentation and the app's own test notes. If a screen has moved, {% include email.html subject="UGREEN guide correction" text="email a screenshot" %} and I'll fix this page the same day.*

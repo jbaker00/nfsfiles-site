@@ -7,7 +7,11 @@ author: James Baker
 
 # The app's App Store record (both platforms share one id).
 app_store_url: https://apps.apple.com/us/app/nfs-files-nas-drive-client/id6789844265
-support_email: jbaker00@mail.com
+# Plus-alias: Gmail delivers it with zero setup, it filters/labels
+# independently, and if it ever leaks to spammers only the alias dies.
+# Never printed raw into HTML — see _includes/email.html (JS-assembled,
+# reversed parts) so crawlers don't harvest it.
+support_email: jbaker00+nfsfiles@gmail.com
 
 # AdSense. The client id is the same publisher as AdMob. `adsense_slot` is
 # the display ad unit's data-ad-slot — empty until James creates the unit in

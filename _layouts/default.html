@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#0da3ad">
   {% seo %}
-  <link rel="stylesheet" href="{{ '/assets/style.css' | relative_url }}?v=1">
+  <link rel="stylesheet" href="{{ '/assets/style.css' | relative_url }}?v=2">
   <link rel="icon" href="{{ '/assets/icon.png' | relative_url }}">
   <link rel="apple-touch-icon" href="{{ '/assets/icon.png' | relative_url }}">
   <script>
@@ -57,19 +57,50 @@
     {% include ad.html %}
 
     {% unless page.no_footer %}
+    {% capture _aside_subject %}NFS Files support{% if page.kind %} — {{ page.kind }}{% endif %}{% endcapture %}
     <aside class="stuck">
       <h2>Still stuck?</h2>
-      <p>Email <a id="support-mail" href="mailto:{{ site.support_email }}?subject={{ 'NFS Files support' | uri_escape }}{% if page.kind %}{{ ' — ' | uri_escape }}{{ page.kind }}{% endif %}">{{ site.support_email }}</a> — a person reads it. Say which NAS you have and paste the exact message the app showed. In the app, <strong>Settings → Contact Support</strong> starts the email with your version and the last error already filled in.</p>
+      <p>{% include email.html subject=_aside_subject %} — a person reads it. Say which NAS you have and paste the exact message the app showed. In the app, <strong>Settings → Contact Support</strong> starts the email with your version and the last error already filled in.</p>
     </aside>
     {% endunless %}
   </main>
 
-  <footer class="wrap foot">
-    <p>© 2026 James Baker · <a href="{{ '/' | relative_url }}">NFS Files</a> · <a href="{{ '/support/' | relative_url }}">Support</a> · <a href="{{ '/privacy/' | relative_url }}">Privacy</a> · <a href="{{ site.app_store_url }}">App Store</a></p>
+  <footer class="foot">
+    <div class="foot-in">
+      <div class="foot-brand">
+        <strong>NFS Files</strong>
+        <p>Your NAS, one tap away.<br>© 2026 James Baker</p>
+      </div>
+      <div>
+        <h4>Help</h4>
+        <ul>
+          <li><a href="{{ '/support/' | relative_url }}">Support</a></li>
+          <li><a href="{{ '/guides/' | relative_url }}">Setup guides</a></li>
+          <li><a href="{{ '/help/errors/' | relative_url }}">Every error, explained</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>NFS Files</h4>
+        <ul>
+          <li><a href="{{ '/' | relative_url }}">Home</a></li>
+          <li><a href="{{ '/privacy/' | relative_url }}">Privacy</a></li>
+          <li><a href="{{ site.app_store_url }}">App Store</a></li>
+        </ul>
+      </div>
+    </div>
     <p class="fine">NFS Files is an independent app and is not affiliated with Synology, QNAP, iXsystems, Lime Technology, UGREEN or the Raspberry Pi Foundation. Product names are used to tell you which instructions apply.</p>
   </footer>
 
   <script>
+    // Un-reverse the obfuscated support address (see _includes/email.html):
+    // the "@" never appears in page source, so harvesters find nothing.
+    document.querySelectorAll('a.email-link[data-u]').forEach(function (a) {
+      var u = a.getAttribute('data-u').split('').reverse().join('');
+      var d = a.getAttribute('data-d').split('').reverse().join('');
+      var s = a.getAttribute('data-s') || '';
+      a.textContent = u + '@' + d;
+      a.href = 'mailto:' + u + '@' + d + (s ? '?subject=' + s : '');
+    });
     // The app tells the page which NAS the export path implies (?nas=synology)
     // so a page with per-vendor sections can offer a one-tap jump to the
     // right one. Platform (?p=ios|ipad|mac|ios_on_mac) picks the wording of

@@ -44,4 +44,4 @@ Settings → NFS Files Pro → Upgrade. One-time purchase, no subscription, remo
 
 ## Still stuck?
 
-Email [jbaker00@mail.com](mailto:jbaker00@mail.com?subject=NFS%20Files%20support) — a person reads it. Say which NAS you have (model + OS version) and paste the exact message the app showed. Easiest: in the app, **Settings → Contact Support** starts the email with your version and the last error already filled in.
+{% include email.html subject="NFS Files support" %} — a person reads it. Say which NAS you have (model + OS version) and paste the exact message the app showed. Easiest: in the app, **Settings → Contact Support** starts the email with your version and the last error already filled in.
