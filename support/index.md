@@ -9,13 +9,13 @@ description: "NFS Files support: per-NAS setup guides, every error explained, Fi
 
 Most connection problems come down to one server setting. If a connection is refused, the app tells you what to fix — and the walkthroughs are here:
 
-<ul class="cards" markdown="1">
-- [Synology setup](/guides/synology/) **DSM 7 — enable NFS, non-privileged ports, squash**
-- [QNAP setup](/guides/qnap/) **QTS / QuTS hero — NFS service, host access, squash**
-- [TrueNAS setup](/guides/truenas/) **CORE and SCALE — service, shares, Mapall**
-- [Unraid setup](/guides/unraid/) **NFS rules, security settings, ownership**
-- [UGREEN setup](/guides/ugreen/) **UGOS — shared-folder NFS rules**
-- [Linux / Raspberry Pi](/guides/pi/) **nfs-kernel-server, /etc/exports, exportfs**
+<ul class="cards">
+<li><a href="/guides/synology/"><strong>Synology setup</strong><span>DSM 7 — enable NFS, non-privileged ports, squash</span></a></li>
+<li><a href="/guides/qnap/"><strong>QNAP setup</strong><span>QTS / QuTS hero — NFS service, host access, squash</span></a></li>
+<li><a href="/guides/truenas/"><strong>TrueNAS setup</strong><span>CORE and SCALE — service, shares, Mapall</span></a></li>
+<li><a href="/guides/unraid/"><strong>Unraid setup</strong><span>NFS rules, security settings, ownership</span></a></li>
+<li><a href="/guides/ugreen/"><strong>UGREEN setup</strong><span>UGOS — shared-folder NFS rules</span></a></li>
+<li><a href="/guides/pi/"><strong>Linux / Raspberry Pi</strong><span>nfs-kernel-server, /etc/exports, exportfs</span></a></li>
 </ul>
 
 The three pages that solve nearly everything:

@@ -13,30 +13,26 @@ description: "How to turn on the Local Network permission for NFS Files on iPhon
 
 ## Turn it on
 
-<div data-platform="ios" markdown="1">
-
-### iPhone and iPad
-
-1. Open **Settings** (the system app, not NFS Files' own settings).
-2. Scroll to **Privacy & Security** → **Local Network**.
-3. Find **NFS Files** and turn it **on**.
-4. Go back to NFS Files and tap the server again.
-
-If NFS Files isn't in the list, the system hasn't asked yet: connect to a server once, and the prompt appears. Tap **Allow**.
-
+<div data-platform="ios">
+<h3>iPhone and iPad</h3>
+<ol>
+<li>Open <strong>Settings</strong> (the system app, not NFS Files' own settings).</li>
+<li>Scroll to <strong>Privacy &amp; Security</strong> → <strong>Local Network</strong>.</li>
+<li>Find <strong>NFS Files</strong> and turn it <strong>on</strong>.</li>
+<li>Go back to NFS Files and tap the server again.</li>
+</ol>
+<p>If NFS Files isn't in the list, the system hasn't asked yet: connect to a server once, and the prompt appears. Tap <strong>Allow</strong>.</p>
 </div>
 
-<div data-platform="mac" markdown="1">
-
-### Mac (macOS 15 Sequoia and later)
-
-1. Open **System Settings**.
-2. **Privacy & Security** → **Local Network**.
-3. Turn on **NFS Files**.
-4. Quit and reopen NFS Files, then connect again.
-
-On macOS 14 and earlier there is no such permission; if you're on 14 the cause is something else — see [No route to the server](/help/errors/host_unreachable/).
-
+<div data-platform="mac">
+<h3>Mac (macOS 15 Sequoia and later)</h3>
+<ol>
+<li>Open <strong>System Settings</strong>.</li>
+<li><strong>Privacy &amp; Security</strong> → <strong>Local Network</strong>.</li>
+<li>Turn on <strong>NFS Files</strong>.</li>
+<li>Quit and reopen NFS Files, then connect again.</li>
+</ol>
+<p>On macOS 14 and earlier there is no such permission; if you're on 14 the cause is something else — see <a href="/help/errors/host_unreachable/">No route to the server</a>.</p>
 </div>
 
 ## Why this exists
