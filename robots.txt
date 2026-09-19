@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://nfsfiles.gvtinsider.com/sitemap.xml

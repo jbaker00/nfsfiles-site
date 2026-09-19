@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0da3ad">
+  {% seo %}
+  <link rel="stylesheet" href="{{ '/assets/style.css' | relative_url }}?v=1">
+  <link rel="icon" href="{{ '/assets/icon.png' | relative_url }}">
+  <link rel="apple-touch-icon" href="{{ '/assets/icon.png' | relative_url }}">
+  <script>
+    // The app appends ?pro=1 for someone who bought NFS Files Pro. They paid
+    // for no ads, so pause AdSense before its loader runs and remember the
+    // choice for the rest of their visit. (Trivially spoofable; that's fine —
+    // it's a courtesy, not a paywall.)
+    (function () {
+      var q = new URLSearchParams(location.search);
+      var pro = q.get('pro') === '1' || localStorage.getItem('nfsfiles-pro') === '1';
+      if (q.get('pro') === '1') { try { localStorage.setItem('nfsfiles-pro', '1'); } catch (e) {} }
+      if (pro) {
+        (window.adsbygoogle = window.adsbygoogle || []).pauseAdRequests = 1;
+        document.documentElement.classList.add('pro');
+      }
+    })();
+  </script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={{ site.adsense_client }}" crossorigin="anonymous"></script>
+</head>
+<body>
+  <header class="top">
+    <nav class="wrap">
+      <a class="brand" href="{{ '/' | relative_url }}"><img src="{{ '/assets/icon.png' | relative_url }}" alt="" width="28" height="28"> NFS Files</a>
+      <div class="links">
+        <a href="{{ '/support/' | relative_url }}">Support</a>
+        <a href="{{ '/guides/' | relative_url }}">Setup guides</a>
+        <a href="{{ '/help/errors/' | relative_url }}">Errors</a>
+        <a class="store" href="{{ site.app_store_url }}">App Store</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="wrap page">
+    {% if page.kind %}
+    <p class="kicker">Error <code>{{ page.kind }}</code></p>
+    {% elsif page.kicker %}
+    <p class="kicker">{{ page.kicker }}</p>
+    {% endif %}
+    {% if page.title and page.show_title != false %}
+    <h1>{{ page.title }}</h1>
+    {% endif %}
+    {% if page.summary %}
+    <p class="summary">{{ page.summary }}</p>
+    {% endif %}
+    <div id="nas-jump" class="nas-jump" hidden></div>
+
+    {{ content }}
+
+    {% include ad.html %}
+
+    {% unless page.no_footer %}
+    <aside class="stuck">
+      <h2>Still stuck?</h2>
+      <p>Email <a id="support-mail" href="mailto:{{ site.support_email }}?subject={{ 'NFS Files support' | uri_escape }}{% if page.kind %}{{ ' — ' | uri_escape }}{{ page.kind }}{% endif %}">{{ site.support_email }}</a> — a person reads it. Say which NAS you have and paste the exact message the app showed. In the app, <strong>Settings → Contact Support</strong> starts the email with your version and the last error already filled in.</p>
+    </aside>
+    {% endunless %}
+  </main>
+
+  <footer class="wrap foot">
+    <p>© 2026 James Baker · <a href="{{ '/' | relative_url }}">NFS Files</a> · <a href="{{ '/support/' | relative_url }}">Support</a> · <a href="{{ '/privacy/' | relative_url }}">Privacy</a> · <a href="{{ site.app_store_url }}">App Store</a></p>
+    <p class="fine">NFS Files is an independent app and is not affiliated with Synology, QNAP, iXsystems, Lime Technology, UGREEN or the Raspberry Pi Foundation. Product names are used to tell you which instructions apply.</p>
+  </footer>
+
+  <script>
+    // The app tells the page which NAS the export path implies (?nas=synology)
+    // so a page with per-vendor sections can offer a one-tap jump to the
+    // right one. Platform (?p=ios|ipad|mac|ios_on_mac) picks the wording of
+    // "the app" hints, when a page marks them.
+    (function () {
+      var q = new URLSearchParams(location.search);
+      var nas = q.get('nas');
+      var names = { synology: 'Synology', qnap: 'QNAP', unraid: 'Unraid', truenas: 'TrueNAS', ugreen: 'UGREEN', pi: 'Linux / Raspberry Pi' };
+      if (nas && names[nas]) {
+        var target = document.getElementById('nas-' + nas);
+        var jump = document.getElementById('nas-jump');
+        if (target && jump) {
+          jump.innerHTML = 'Your server looks like a <strong>' + names[nas] + '</strong> — <a href="#nas-' + nas + '">jump to those steps</a>.';
+          jump.hidden = false;
+        }
+      }
+      var p = q.get('p');
+      if (p) {
+        var isMac = p === 'mac';
+        document.querySelectorAll('[data-platform]').forEach(function (el) {
+          var want = el.getAttribute('data-platform');
+          if ((want === 'mac') !== isMac) el.hidden = true;
+        });
+      }
+    })();
+  </script>
+</body>
+</html>

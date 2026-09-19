@@ -1,0 +1,38 @@
+title: NFS Files Help
+description: Setup guides, error explanations and support for NFS Files — the NFS client for iPhone, iPad and Mac.
+url: https://nfsfiles.gvtinsider.com
+baseurl: ""
+lang: en
+author: James Baker
+
+# The app's App Store record (both platforms share one id).
+app_store_url: https://apps.apple.com/us/app/nfs-files-nas-drive-client/id6789844265
+support_email: jbaker00@mail.com
+
+# AdSense. The client id is the same publisher as AdMob. `adsense_slot` is
+# the display ad unit's data-ad-slot — empty until James creates the unit in
+# AdSense (Ads → By ad unit → Display → responsive); the layout renders no
+# <ins> while it's empty, but the loader script stays so site verification
+# and Auto ads work.
+adsense_client: ca-pub-7871017136061682
+adsense_slot: ""
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+plugins:
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - scripts
