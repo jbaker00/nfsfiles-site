@@ -11,6 +11,7 @@
   --line: #e5e5ea;
   --panel: #f2f7f8;
   --card: #ffffff;
+  --bg: #ffffff;
   --warn: #fff6e5;
   --warn-line: #f0b64a;
   --code-bg: #eef2f4;
@@ -36,8 +37,8 @@
     --pre-bg: #0b1421;
     --accent-ink: #4fd0d8;
     --shadow: 0 1px 2px rgb(0 0 0 / .4), 0 8px 24px -12px rgb(0 0 0 / .6);
+    --bg: #000000;
   }
-  body { background: #000; }
   .feature, .cards a, .stuck { background: var(--card); }
 }
 * { box-sizing: border-box; }
@@ -46,7 +47,7 @@ body {
   margin: 0;
   font: 17px/1.65 -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   color: var(--ink);
-  background: #fff;
+  background: var(--bg);
 }
 a { color: var(--accent-dark); text-underline-offset: 2px; }
 @media (prefers-color-scheme: dark) { a { color: #4fd0d8; } }
