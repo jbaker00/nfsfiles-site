@@ -16,11 +16,11 @@ Control Panel → Shared Folder → select the folder → **Edit** → **NFS Per
 | Field | Set it to | Why |
 |---|---|---|
 | Hostname or IP | your subnet, e.g. `192.168.1.0/24` | `*` works but lets any network the NAS can see mount it; a subnet is safer. Find your device's IP in its Wi-Fi settings to confirm the first three numbers. |
-| Privilege | **Read/Write** | Read-only gives [the share is read-only](/help/errors/nfs_rofs/) on every write. |
-| Squash | **Map all users to admin** (or to guest for a read-only folder) | Then the UID in the app doesn't matter and [access denied](/help/errors/nfs_access/) goes away. |
-| Security | **sys** | `krb5`-only rules give [rejected credentials](/help/errors/auth_rejected/). |
-| ☑ Allow connections from non-privileged ports | **ticked** | Without this, iPhone/iPad/Mac apps get [the server refused this device](/help/errors/mount_access_denied/). |
-| ☑ Allow users to access mounted subfolders | **ticked** if you connect to a subfolder | Otherwise subfolder mounts fail with [that folder isn't shared](/help/errors/export_not_found/). |
+| Privilege | **Read/Write** | Read-only gives [the share is read-only]({{ site.baseurl }}/help/errors/nfs_rofs/) on every write. |
+| Squash | **Map all users to admin** (or to guest for a read-only folder) | Then the UID in the app doesn't matter and [access denied]({{ site.baseurl }}/help/errors/nfs_access/) goes away. |
+| Security | **sys** | `krb5`-only rules give [rejected credentials]({{ site.baseurl }}/help/errors/auth_rejected/). |
+| ☑ Allow connections from non-privileged ports | **ticked** | Without this, iPhone/iPad/Mac apps get [the server refused this device]({{ site.baseurl }}/help/errors/mount_access_denied/). |
+| ☑ Allow users to access mounted subfolders | **ticked** if you connect to a subfolder | Otherwise subfolder mounts fail with [that folder isn't shared]({{ site.baseurl }}/help/errors/export_not_found/). |
 
 Save, then Save again on the folder. DSM applies it immediately — no service restart needed.
 

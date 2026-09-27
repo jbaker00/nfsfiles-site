@@ -25,7 +25,7 @@ Add `sys` to the share's security options. Kerberos can stay enabled alongside i
 
 - **Linux / Raspberry Pi:** in `/etc/exports`, an option like `sec=krb5` restricts the export. Change it to `sec=sys:krb5` (or remove `sec=` — `sys` is the default), then `sudo exportfs -ra`.
 
-- **QNAP, Unraid, UGREEN:** don't offer Kerberos-only NFS from their UIs; if you see this error there, the server is probably restricting by client address instead — see [access denied](/help/errors/mount_access_denied/).
+- **QNAP, Unraid, UGREEN:** don't offer Kerberos-only NFS from their UIs; if you see this error there, the server is probably restricting by client address instead — see [access denied]({{ site.baseurl }}/help/errors/mount_access_denied/).
 
 ## NFS Files does not support Kerberos
 

@@ -14,9 +14,9 @@ Control Panel → Network & File Services → Win/Mac/NFS/WebDAV → **NFS Servi
 Control Panel → Privilege → Shared Folders → select the folder → **Edit Shared Folder Permission** → **NFS host access** (or: right-click the folder → NFS host access, depending on firmware):
 
 - Add your subnet (e.g. `192.168.1.0/24`) — or a single device IP — and tick it.
-- **Access right: read/write** (read-only gives [the share is read-only](/help/errors/nfs_rofs/)).
-- **Squash option: all_squash**, with **Anonymous UID/GID** set to the user that owns the share's files. Then the UID in the app is irrelevant and [access denied](/help/errors/nfs_access/) goes away.
-- QNAP's NFS server allows non-privileged ports by default — if you see [the server refused this device](/help/errors/mount_access_denied/) on a QNAP, suspect the host-access list first, not ports.
+- **Access right: read/write** (read-only gives [the share is read-only]({{ site.baseurl }}/help/errors/nfs_rofs/)).
+- **Squash option: all_squash**, with **Anonymous UID/GID** set to the user that owns the share's files. Then the UID in the app is irrelevant and [access denied]({{ site.baseurl }}/help/errors/nfs_access/) goes away.
+- QNAP's NFS server allows non-privileged ports by default — if you see [the server refused this device]({{ site.baseurl }}/help/errors/mount_access_denied/) on a QNAP, suspect the host-access list first, not ports.
 
 ## 3. What to type in NFS Files
 

@@ -11,4 +11,4 @@ NFSv4 status 10001, *BADHANDLE*. The server considers the file handle malformed 
 
 ## Fix
 
-Reconnect from the server list. If it recurs on one specific item, look at that item on the server; if it recurs after every NAS restart, the export needs a stable `fsid`. See [stale file handle](/help/errors/nfs_stale/).
+Reconnect from the server list. If it recurs on one specific item, look at that item on the server; if it recurs after every NAS restart, the export needs a stable `fsid`. See [stale file handle]({{ site.baseurl }}/help/errors/nfs_stale/).

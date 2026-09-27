@@ -41,4 +41,4 @@ Tap **Inspect Server** on the server card. It shows **You present** (your UID/GI
 
 NFS Files currently sends one group ID. If access depends on a *secondary* group membership on the server, use Option B or make the folder readable by the primary group. (Extra group IDs are on the roadmap.)
 
-Full background: [User IDs and squash](/help/identity/).
+Full background: [User IDs and squash]({{ site.baseurl }}/help/identity/).

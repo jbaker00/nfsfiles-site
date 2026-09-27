@@ -19,7 +19,7 @@ no_footer: true
 </ul>
 <div class="cta-row">
 {% include store_badge.html line1="Download on the" %}
-<a class="cta-ghost" href="/guides/">Setup guides →</a>
+<a class="cta-ghost" href="{{ site.baseurl }}/guides/">Setup guides →</a>
 </div>
 <p class="trust">Free · No account · One-time Pro upgrade, never a subscription</p>
 </div>
@@ -71,10 +71,10 @@ no_footer: true
 <h2>Stuck connecting?</h2>
 <p>Most first-connect problems are one server setting. Start here:</p>
 <ul>
-<li><a href="/guides/">Setup guides</a> — Synology, QNAP, TrueNAS, Unraid, UGREEN, Linux/Pi</li>
-<li><a href="/help/errors/mount_access_denied/">The server refused this device</a> — the #1 error, and its two fixes</li>
-<li><a href="/help/errors/">Every error, explained</a></li>
-<li><a href="/support/">Support</a> — a person answers</li>
+<li><a href="{{ site.baseurl }}/guides/">Setup guides</a> — Synology, QNAP, TrueNAS, Unraid, UGREEN, Linux/Pi</li>
+<li><a href="{{ site.baseurl }}/help/errors/mount_access_denied/">The server refused this device</a> — the #1 error, and its two fixes</li>
+<li><a href="{{ site.baseurl }}/help/errors/">Every error, explained</a></li>
+<li><a href="{{ site.baseurl }}/support/">Support</a> — a person answers</li>
 </ul>
 </div>
 

@@ -27,13 +27,13 @@ NFS Files opened a connection to the address you entered and waited about eight 
 1. **Is the server on?** Look at the dot on the server card in NFS Files. Grey means the app couldn't ping it either. A sleeping NAS (hibernation, HDD spin-down with network standby) often won't wake for NFS.
 2. **Same network?** Your phone or Mac has to be on the same LAN as the NAS. Turn off any VPN (Tailscale, WireGuard, a corporate VPN) and make sure you're not on a guest Wi-Fi network — most routers isolate guest devices from the rest of the house.
 3. **Right address?** A typo in the IP is the most common cause of all. Use **Scan My Network** in the add-server form: it sweeps your subnet for anything speaking RPC and lists what it finds.
-4. **The NAS's own firewall.** Synology, QNAP and TrueNAS all ship a firewall that, once enabled, blocks NFS unless you add a rule. NFS needs port **111** (portmapper), **2049** (NFS) and the MOUNT service port (random unless you pin it) open to your subnet. See the [setup guide for your NAS](/guides/).
+4. **The NAS's own firewall.** Synology, QNAP and TrueNAS all ship a firewall that, once enabled, blocks NFS unless you add a rule. NFS needs port **111** (portmapper), **2049** (NFS) and the MOUNT service port (random unless you pin it) open to your subnet. See the [setup guide for your NAS]({{ site.baseurl }}/guides/).
 5. **Router firewall / VLANs.** If the NAS is on a different VLAN (pfSense, UniFi, OPNsense), the firewall between VLANs must allow those same ports. NFSv3 is particularly awkward across firewalls because MOUNT uses a random port — pin it on the server, or pick **NFSv4** in the app's Advanced settings (NFSv4 uses port 2049 only).
-6. **Local Network permission.** On iPhone and iPad, a denied Local Network permission can look like a timeout. See [Local Network permission](/help/local-network/).
+6. **Local Network permission.** On iPhone and iPad, a denied Local Network permission can look like a timeout. See [Local Network permission]({{ site.baseurl }}/help/local-network/).
 
 ## On a Mac
 
-The same checks apply. Additionally, on macOS 15 and later, the first time an app talks to the local network macOS asks for permission — if that dialog was dismissed, you'll see either this error or "host unreachable". [How to turn it on](/help/local-network/).
+The same checks apply. Additionally, on macOS 15 and later, the first time an app talks to the local network macOS asks for permission — if that dialog was dismissed, you'll see either this error or "host unreachable". [How to turn it on]({{ site.baseurl }}/help/local-network/).
 """)
 
 page("connection_closed", "The server closed the connection",
@@ -100,7 +100,7 @@ Then the port you typed is closed. Check the server's configuration for the port
 
 ## A firewall can also "refuse"
 
-Most firewalls silently drop (which gives a [timeout](/help/errors/timeout/)), but some are configured to reject, which looks like this. If the NAS firewall is on, add a rule allowing 111 and 2049 (and mountd) from your subnet.
+Most firewalls silently drop (which gives a [timeout]({{ site.baseurl }}/help/errors/timeout/)), but some are configured to reject, which looks like this. If the NAS firewall is on, add a rule allowing 111 and 2049 (and mountd) from your subnet.
 """)
 
 page("host_unreachable", "No route to the server",
@@ -117,7 +117,7 @@ iOS, iPadOS and macOS 15+ ask, the first time an app talks to your LAN, whether 
 - **iPhone / iPad:** Settings → Privacy & Security → **Local Network** → turn on **NFS Files**.
 - **Mac (macOS 15 Sequoia and later):** System Settings → Privacy & Security → **Local Network** → turn on **NFS Files**.
 
-Full walkthrough with screenshots: [Local Network permission](/help/local-network/).
+Full walkthrough with screenshots: [Local Network permission]({{ site.baseurl }}/help/local-network/).
 
 ## 2. Different subnet
 
@@ -139,7 +139,7 @@ The operating system said *network unreachable*: there's no interface that could
 
 - **Wi-Fi is on** and connected to your home network. Cellular can't reach a NAS on your LAN (unless you've set up a VPN to home — in which case check that the VPN is connected).
 - **Airplane mode** is off.
-- **On a Mac with macOS 15 or later:** a denied **Local Network** permission produces this error. System Settings → Privacy & Security → Local Network → turn on NFS Files. [Details](/help/local-network/).
+- **On a Mac with macOS 15 or later:** a denied **Local Network** permission produces this error. System Settings → Privacy & Security → Local Network → turn on NFS Files. [Details]({{ site.baseurl }}/help/local-network/).
 - **IPv6 address?** If you typed an IPv6 literal and your Wi-Fi has no IPv6, use the IPv4 address instead.
 - **Ethernet adapter on iPad or Mac:** make sure it has an address (Settings → Ethernet), not just a link.
 """)
@@ -170,8 +170,8 @@ The connection failed with an error the app doesn't have a specific page for. Th
 
 - Same Wi-Fi network as the NAS, VPN off, guest network off.
 - The NAS is on and the IP is right (**Scan My Network** finds it).
-- Local Network permission is on for NFS Files ([how](/help/local-network/)).
-- NFS is enabled on the NAS ([setup guides](/guides/)).
+- Local Network permission is on for NFS Files ([how]({{ site.baseurl }}/help/local-network/)).
+- NFS is enabled on the NAS ([setup guides]({{ site.baseurl }}/guides/)).
 
 ## If it persists
 
@@ -216,7 +216,7 @@ Add `sys` to the share's security options. Kerberos can stay enabled alongside i
 
 - **Linux / Raspberry Pi:** in `/etc/exports`, an option like `sec=krb5` restricts the export. Change it to `sec=sys:krb5` (or remove `sec=` — `sys` is the default), then `sudo exportfs -ra`.
 
-- **QNAP, Unraid, UGREEN:** don't offer Kerberos-only NFS from their UIs; if you see this error there, the server is probably restricting by client address instead — see [access denied](/help/errors/mount_access_denied/).
+- **QNAP, Unraid, UGREEN:** don't offer Kerberos-only NFS from their UIs; if you see this error there, the server is probably restricting by client address instead — see [access denied]({{ site.baseurl }}/help/errors/mount_access_denied/).
 
 ## NFS Files does not support Kerberos
 
@@ -404,7 +404,7 @@ page("nfs_perm", "Operation not permitted",
 """
 ## What this means
 
-NFS status 1, *EPERM*: not *access denied* to the folder, but *this operation* isn't permitted for who you are. It's distinct from [access denied](/help/errors/nfs_access/).
+NFS status 1, *EPERM*: not *access denied* to the folder, but *this operation* isn't permitted for who you are. It's distinct from [access denied]({{ site.baseurl }}/help/errors/nfs_access/).
 
 ## When you'll see it
 
@@ -414,7 +414,7 @@ NFS status 1, *EPERM*: not *access denied* to the folder, but *this operation* i
 
 ## What helps
 
-Match the UID/GID you present to the file's owner (the permission editor shows the current owner), or do the change on the server side. See [User IDs and squash](/help/identity/).
+Match the UID/GID you present to the file's owner (the permission editor shows the current owner), or do the change on the server side. See [User IDs and squash]({{ site.baseurl }}/help/identity/).
 """)
 
 page("nfs_noent", "No such file or folder",
@@ -430,7 +430,7 @@ Someone (or something — a sync job, a media server tidying up) changed the fol
 
 ## On NFSv4, at connect time
 
-If this happened while *connecting*, the export path doesn't exist under the NFSv4 pseudo-filesystem. Linux servers with `fsid=0` present a different root to NFSv4 clients than to NFSv3 ones — `/srv/nfs/media` on v3 may be `/media` on v4. Use **Find Shared Folders**, try the shorter path, or set **NFS Version → NFSv3**. Details on the [not shared](/help/errors/export_not_found/) page.
+If this happened while *connecting*, the export path doesn't exist under the NFSv4 pseudo-filesystem. Linux servers with `fsid=0` present a different root to NFSv4 clients than to NFSv3 ones — `/srv/nfs/media` on v3 may be `/media` on v4. Use **Find Shared Folders**, try the shorter path, or set **NFS Version → NFSv3**. Details on the [not shared]({{ site.baseurl }}/help/errors/export_not_found/) page.
 
 ## Case sensitivity
 
@@ -496,7 +496,7 @@ Tap **Inspect Server** on the server card. It shows **You present** (your UID/GI
 
 NFS Files currently sends one group ID. If access depends on a *secondary* group membership on the server, use Option B or make the folder readable by the primary group. (Extra group IDs are on the roadmap.)
 
-Full background: [User IDs and squash](/help/identity/).
+Full background: [User IDs and squash]({{ site.baseurl }}/help/identity/).
 """)
 
 page("nfs_exist", "An item with that name already exists",
@@ -665,7 +665,7 @@ NFSv4 status 10001, *BADHANDLE*. The server considers the file handle malformed 
 
 ## Fix
 
-Reconnect from the server list. If it recurs on one specific item, look at that item on the server; if it recurs after every NAS restart, the export needs a stable `fsid`. See [stale file handle](/help/errors/nfs_stale/).
+Reconnect from the server list. If it recurs on one specific item, look at that item on the server; if it recurs after every NAS restart, the export needs a stable `fsid`. See [stale file handle]({{ site.baseurl }}/help/errors/nfs_stale/).
 """)
 
 page("nfs_notsupp", "The operation isn't supported by this server",
@@ -765,12 +765,12 @@ def main():
         f.write("## Connecting\n\n<ul class=\"errlist\">\n")
         for kind in ["timeout", "refused", "host_unreachable", "network_unreachable", "dns", "connection_closed", "connection_reset", "connection_failed", "malformed_reply", "program_unavailable", "rpc_rejected", "auth_rejected", "export_not_found", "mount_access_denied", "mount_denied", "unsupported"]:
             t, s, _ = PAGES[kind]
-            f.write(f"<li><a href=\"/help/errors/{kind}/\"><code>{kind}</code> {t}</a><br><span>{s}</span></li>\n")
+            f.write(f"<li><a href=\"{{{{ site.baseurl }}}}/help/errors/{kind}/\"><code>{kind}</code> {t}</a><br><span>{s}</span></li>\n")
         f.write("</ul>\n\n## While browsing and transferring\n\n<ul class=\"errlist\">\n")
         for kind in PAGES:
             if kind.startswith("nfs_"):
                 t, s, _ = PAGES[kind]
-                f.write(f"<li><a href=\"/help/errors/{kind}/\"><code>{kind}</code> {t}</a><br><span>{s}</span></li>\n")
+                f.write(f"<li><a href=\"{{{{ site.baseurl }}}}/help/errors/{kind}/\"><code>{kind}</code> {t}</a><br><span>{s}</span></li>\n")
         f.write("</ul>\n\nSomething not listed? The app shows codes like `nfs_status_123` for statuses it hasn't seen before — email the code and what you were doing.\n")
     print(f"wrote {len(PAGES)} error pages + index")
 

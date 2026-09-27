@@ -7,7 +7,7 @@ description: "NFS Files error nfs_perm: The server allows you into the folder bu
 
 ## What this means
 
-NFS status 1, *EPERM*: not *access denied* to the folder, but *this operation* isn't permitted for who you are. It's distinct from [access denied](/help/errors/nfs_access/).
+NFS status 1, *EPERM*: not *access denied* to the folder, but *this operation* isn't permitted for who you are. It's distinct from [access denied]({{ site.baseurl }}/help/errors/nfs_access/).
 
 ## When you'll see it
 
@@ -17,4 +17,4 @@ NFS status 1, *EPERM*: not *access denied* to the folder, but *this operation* i
 
 ## What helps
 
-Match the UID/GID you present to the file's owner (the permission editor shows the current owner), or do the change on the server side. See [User IDs and squash](/help/identity/).
+Match the UID/GID you present to the file's owner (the permission editor shows the current owner), or do the change on the server side. See [User IDs and squash]({{ site.baseurl }}/help/identity/).

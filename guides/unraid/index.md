@@ -15,12 +15,12 @@ Shares → click the share → **NFS Security Settings**:
 
 - **Export: Yes.**
 - **Security:** Public (anyone on the allowed networks) or Secure/Private with your network listed.
-- **Rule:** must start with your subnet or `*` and must include `insecure` (Unraid's default rule already does, e.g. `192.168.1.0/24(sec=sys,rw,insecure,anongid=100,anonuid=99,all_squash)`). If a customised rule lost `insecure`, iPhone/iPad/Mac apps get [the server refused this device](/help/errors/mount_access_denied/).
+- **Rule:** must start with your subnet or `*` and must include `insecure` (Unraid's default rule already does, e.g. `192.168.1.0/24(sec=sys,rw,insecure,anongid=100,anonuid=99,all_squash)`). If a customised rule lost `insecure`, iPhone/iPad/Mac apps get [the server refused this device]({{ site.baseurl }}/help/errors/mount_access_denied/).
 - The default rule squashes everyone to `nobody:users` (`anonuid=99,anongid=100`) — so the UID in the app is irrelevant, **provided the files are actually owned by `nobody:users`**.
 
 ## 3. The ownership gotcha
 
-Unraid writes new share files as `nobody:users`, but files copied over SMB as a specific user, or moved in from a disk share, often aren't. Then you connect fine, list fine, and get [access denied](/help/errors/nfs_access/) on write.
+Unraid writes new share files as `nobody:users`, but files copied over SMB as a specific user, or moved in from a disk share, often aren't. Then you connect fine, list fine, and get [access denied]({{ site.baseurl }}/help/errors/nfs_access/) on write.
 
 Fix: Tools → **New Permissions** (Docker/VM tabs → run it against the share), or shell `chown -R nobody:users /mnt/user/media`. **Inspect Server** in the app shows "Export owned by" so you can confirm.
 

@@ -17,11 +17,11 @@ Every NAS UI is a front end for exactly this. The parts that matter:
 
 | Part | Meaning | If you get it wrong |
 |---|---|---|
-| `/srv/nfs/media` | The folder — the **export path** you type in NFS Files. | [That folder isn't shared](/help/errors/export_not_found/) |
-| `192.168.1.0/24` | Who may connect — a host, a subnet, or `*`. | [The server refused this device](/help/errors/mount_access_denied/) |
-| `rw` / `ro` | Read-write or read-only. | [The share is read-only](/help/errors/nfs_rofs/) |
-| `insecure` | Accept connections from ports above 1024. **Required for iPhone, iPad and Mac apps.** | [The server refused this device](/help/errors/mount_access_denied/) |
-| `all_squash,anonuid=…` | Map every client to one user. Recommended. | [Access denied](/help/errors/nfs_access/) |
+| `/srv/nfs/media` | The folder — the **export path** you type in NFS Files. | [That folder isn't shared]({{ site.baseurl }}/help/errors/export_not_found/) |
+| `192.168.1.0/24` | Who may connect — a host, a subnet, or `*`. | [The server refused this device]({{ site.baseurl }}/help/errors/mount_access_denied/) |
+| `rw` / `ro` | Read-write or read-only. | [The share is read-only]({{ site.baseurl }}/help/errors/nfs_rofs/) |
+| `insecure` | Accept connections from ports above 1024. **Required for iPhone, iPad and Mac apps.** | [The server refused this device]({{ site.baseurl }}/help/errors/mount_access_denied/) |
+| `all_squash,anonuid=…` | Map every client to one user. Recommended. | [Access denied]({{ site.baseurl }}/help/errors/nfs_access/) |
 | `no_subtree_check` | Skip a check that can spuriously refuse subfolder mounts. Recommended. | subfolder mounts refused |
 | `sync` | Commit writes before acknowledging. Safer; the default on modern servers. | — |
 
@@ -31,7 +31,7 @@ Old NFS servers only trusted clients connecting from **ports below 1024**, becau
 
 The name is unfortunate: the option doesn't make anything less secure on a network where all clients are personal devices anyway — the "security" it removes never applied to them.
 
-Each NAS has its own name for it — see the [setup guides](/guides/).
+Each NAS has its own name for it — see the [setup guides]({{ site.baseurl }}/guides/).
 
 ## Ports
 

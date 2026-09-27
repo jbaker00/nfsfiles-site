@@ -32,7 +32,7 @@ description: "How to turn on the Local Network permission for NFS Files on iPhon
 <li>Turn on <strong>NFS Files</strong>.</li>
 <li>Quit and reopen NFS Files, then connect again.</li>
 </ol>
-<p>On macOS 14 and earlier there is no such permission; if you're on 14 the cause is something else — see <a href="/help/errors/host_unreachable/">No route to the server</a>.</p>
+<p>On macOS 14 and earlier there is no such permission; if you're on 14 the cause is something else — see <a href="{{ site.baseurl }}/help/errors/host_unreachable/">No route to the server</a>.</p>
 </div>
 
 ## Why this exists
@@ -41,4 +41,4 @@ Apple added the Local Network permission so apps can't quietly map your home net
 
 ## Still failing with it on?
 
-Then the network path itself is the problem: [No route to the server](/help/errors/host_unreachable/) covers subnets and VLANs, and [timeout](/help/errors/timeout/) covers firewalls.
+Then the network path itself is the problem: [No route to the server]({{ site.baseurl }}/help/errors/host_unreachable/) covers subnets and VLANs, and [timeout]({{ site.baseurl }}/help/errors/timeout/) covers firewalls.

@@ -16,7 +16,7 @@ iOS, iPadOS and macOS 15+ ask, the first time an app talks to your LAN, whether 
 - **iPhone / iPad:** Settings → Privacy & Security → **Local Network** → turn on **NFS Files**.
 - **Mac (macOS 15 Sequoia and later):** System Settings → Privacy & Security → **Local Network** → turn on **NFS Files**.
 
-Full walkthrough with screenshots: [Local Network permission](/help/local-network/).
+Full walkthrough with screenshots: [Local Network permission]({{ site.baseurl }}/help/local-network/).
 
 ## 2. Different subnet
 

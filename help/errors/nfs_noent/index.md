@@ -15,7 +15,7 @@ Someone (or something — a sync job, a media server tidying up) changed the fol
 
 ## On NFSv4, at connect time
 
-If this happened while *connecting*, the export path doesn't exist under the NFSv4 pseudo-filesystem. Linux servers with `fsid=0` present a different root to NFSv4 clients than to NFSv3 ones — `/srv/nfs/media` on v3 may be `/media` on v4. Use **Find Shared Folders**, try the shorter path, or set **NFS Version → NFSv3**. Details on the [not shared](/help/errors/export_not_found/) page.
+If this happened while *connecting*, the export path doesn't exist under the NFSv4 pseudo-filesystem. Linux servers with `fsid=0` present a different root to NFSv4 clients than to NFSv3 ones — `/srv/nfs/media` on v3 may be `/media` on v4. Use **Find Shared Folders**, try the shorter path, or set **NFS Version → NFSv3**. Details on the [not shared]({{ site.baseurl }}/help/errors/export_not_found/) page.
 
 ## Case sensitivity
 

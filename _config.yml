@@ -1,7 +1,14 @@
 title: NFS Files Help
 description: Setup guides, error explanations and support for NFS Files — the NFS client for iPhone, iPad and Mac.
-url: https://allgemselect.com
-baseurl: ""
+# Canonical home: the GitHub Pages project address, which the app and the
+# App Store listing link to directly (James 2026-09-26: no redirecting people
+# to allgemselect.com). allgemselect.com is a mirror kept alive only for the
+# pending AdSense review — scripts/sync-allgemselect.sh publishes this same
+# tree there with url/baseurl/adsense overridden. Every internal link must go
+# through {{ site.baseurl }} (or relative_url) or it breaks under the
+# /nfsfiles-site/ sub-path.
+url: https://jbaker00.github.io
+baseurl: "/nfsfiles-site"
 lang: en
 author: James Baker
 
@@ -19,6 +26,9 @@ support_email: jbaker00+nfsfiles@gmail.com
 # <ins> while it's empty, but the loader script stays so site verification
 # and Auto ads work.
 adsense_client: ca-pub-7871017136061682
+# Off here: AdSense can't approve a github.io sub-path, so the loader would
+# only add weight. The allgemselect.com mirror turns it on.
+adsense: false
 adsense_slot: ""
 
 markdown: kramdown

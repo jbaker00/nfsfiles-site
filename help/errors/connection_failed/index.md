@@ -13,8 +13,8 @@ The connection failed with an error the app doesn't have a specific page for. Th
 
 - Same Wi-Fi network as the NAS, VPN off, guest network off.
 - The NAS is on and the IP is right (**Scan My Network** finds it).
-- Local Network permission is on for NFS Files ([how](/help/local-network/)).
-- NFS is enabled on the NAS ([setup guides](/guides/)).
+- Local Network permission is on for NFS Files ([how]({{ site.baseurl }}/help/local-network/)).
+- NFS is enabled on the NAS ([setup guides]({{ site.baseurl }}/guides/)).
 
 ## If it persists
 

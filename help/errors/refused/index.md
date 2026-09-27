@@ -27,4 +27,4 @@ Then the port you typed is closed. Check the server's configuration for the port
 
 ## A firewall can also "refuse"
 
-Most firewalls silently drop (which gives a [timeout](/help/errors/timeout/)), but some are configured to reject, which looks like this. If the NAS firewall is on, add a rule allowing 111 and 2049 (and mountd) from your subnet.
+Most firewalls silently drop (which gives a [timeout]({{ site.baseurl }}/help/errors/timeout/)), but some are configured to reject, which looks like this. If the NAS firewall is on, add a rule allowing 111 and 2049 (and mountd) from your subnet.
